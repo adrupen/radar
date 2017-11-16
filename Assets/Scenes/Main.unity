@@ -505,24 +505,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - prefab: {fileID: 1969201067106590, guid: 34b5f9dd1e05a8141837b17ef692a75f, type: 2}
-    direction: {x: -1, y: -1}
+    direction: {x: 1, y: 1}
     height: 2
-    speed: 0.5
-    spawn_time: 0
+    speed: 5
+    spawn_time: 5
     initial_position: {x: 0, y: 0}
   - prefab: {fileID: 1969201067106590, guid: 34b5f9dd1e05a8141837b17ef692a75f, type: 2}
     direction: {x: 1, y: -1}
     height: 1
     speed: 0.5
-    spawn_time: 0
+    spawn_time: 2
     initial_position: {x: 0, y: 0}
-  - prefab: {fileID: 1969201067106590, guid: 34b5f9dd1e05a8141837b17ef692a75f, type: 2}
+  - prefab: {fileID: 1002060860012498, guid: 7f08b52e16f33d341af4f88bd207e723, type: 2}
     direction: {x: 0, y: -1}
     height: 0.5
     speed: 0.5
-    spawn_time: 0
+    spawn_time: 1
     initial_position: {x: 0, y: 0}
-  radar_range: 0
+  radar_range: 7
 --- !u!1 &972331269
 GameObject:
   m_ObjectHideFlags: 0

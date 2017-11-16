@@ -15,6 +15,8 @@ public class MarkerBehaviour : MonoBehaviour {
 	void Start () {
 		jet = this.transform.GetChild (0).gameObject;
 		line = this.transform.GetChild (1).gameObject;
+		line.transform.LookAt (new Vector3 (0, 0, 1));
+		//line.transform.rotation = Quaternion.FromToRotation(transform.rotation.eulerAngles, new Vector3(1, 0, 0));
 
 		direction.Normalize ();
 	}
