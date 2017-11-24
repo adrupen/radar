@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MarkerBehaviour : MonoBehaviour {
+public class MarkerBehaviour2D : MonoBehaviour {
 
 	public float height;
 	public float speed;

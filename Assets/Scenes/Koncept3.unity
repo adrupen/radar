@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &23060333
 GameObject:
@@ -148,6 +152,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -163,6 +168,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -230,8 +236,9 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255462201}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -247,6 +254,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -343,7 +351,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &420685282
 Transform:
   m_ObjectHideFlags: 0
@@ -483,58 +490,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 949441056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca164a2d2d368e4f8c2e3ef5729925f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dab3febe6977184c846c1d5f595f77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - prefab: {fileID: 1969201067106590, guid: 34b5f9dd1e05a8141837b17ef692a75f, type: 2}
+  - prefab: {fileID: 1261530323817822, guid: 37f1a46c3cc21814a9edfe589508acda, type: 2}
     direction: {x: 1, y: 1}
-    height: -5
-    speed: 1
-    spawn_time: 1
-    initial_position: {x: 0, y: 5}
-  - prefab: {fileID: 1969201067106590, guid: 34b5f9dd1e05a8141837b17ef692a75f, type: 2}
-    direction: {x: 1, y: 1.5}
-    height: -1.5
-    speed: 0.5
-    spawn_time: 2
-    initial_position: {x: 0, y: 0}
-  - prefab: {fileID: 1002060860012498, guid: 7f08b52e16f33d341af4f88bd207e723, type: 2}
-    direction: {x: 0, y: -1}
     height: 4
-    speed: 0.5
-    spawn_time: 1
+    speed: 1
+    spawn_time: 0
     initial_position: {x: 0, y: 0}
-  - prefab: {fileID: 1002060860012498, guid: 7f08b52e16f33d341af4f88bd207e723, type: 2}
-    direction: {x: 0, y: -1}
-    height: 3
-    speed: 0.5
-    spawn_time: 1
-    initial_position: {x: 0, y: 6}
-  - prefab: {fileID: 1261340120907658, guid: 6e688eed3ee61ce4b8d2fcc82b5d3017, type: 2}
-    direction: {x: -3, y: -1}
-    height: 2
-    speed: 0.5
-    spawn_time: 1
-    initial_position: {x: 4, y: 4}
-  - prefab: {fileID: 1002060860012498, guid: 7f08b52e16f33d341af4f88bd207e723, type: 2}
-    direction: {x: 1, y: -1}
-    height: 1
-    speed: 0.5
-    spawn_time: 1
-    initial_position: {x: 3, y: -3}
-  - prefab: {fileID: 1261340120907658, guid: 6e688eed3ee61ce4b8d2fcc82b5d3017, type: 2}
-    direction: {x: 3, y: 1}
-    height: -3
-    speed: 0.5
-    spawn_time: 1
-    initial_position: {x: 5, y: 0}
-  - prefab: {fileID: 1002060860012498, guid: 7f08b52e16f33d341af4f88bd207e723, type: 2}
-    direction: {x: 6, y: -1}
-    height: -1
-    speed: 0.5
-    spawn_time: 1
-    initial_position: {x: 0, y: 4}
+  - prefab: {fileID: 1355833821463196, guid: 0310caa0cc1cd3f4f82ef90e059b4ed8, type: 2}
+    direction: {x: -1, y: -1}
+    height: -4
+    speed: 1
+    spawn_time: 0
+    initial_position: {x: 0, y: 0}
   radar_range: 7
 --- !u!1 &972331269
 GameObject:
@@ -574,8 +545,9 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972331269}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -591,6 +563,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -658,8 +631,9 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004763374}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -675,6 +649,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
