@@ -33,8 +33,8 @@ public class SpawnObjects : MonoBehaviour {
 
 		foreach(Marker m in objects){
 			if (Time.time > m.spawn_time) {
-				
-				GameObject g  = Instantiate (m.prefab, m.initial_position, Quaternion.LookRotation(new Vector3(m.direction.x * -1, 0, m.direction.y * -1)), marker_space.transform);
+                Vector3 worldPosition = new Vector3(m.initial_position.x, 0 ,m.initial_position.y);
+				GameObject g  = Instantiate (m.prefab, worldPosition, Quaternion.LookRotation(new Vector3(m.direction.x * -1, 0, m.direction.y * -1)), marker_space.transform);
 				active_objects.Add (g);
 				g.GetComponent<MarkerBehaviour> ().height = m.height;
 				g.GetComponent<MarkerBehaviour> ().direction = m.direction;
