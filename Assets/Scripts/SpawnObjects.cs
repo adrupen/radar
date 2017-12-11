@@ -12,6 +12,7 @@ public class SpawnObjects : MonoBehaviour {
 		public float speed;
 		public float spawn_time;
 		public Vector2 initial_position;
+		public bool is2D;
 	};
 
 	public List<Marker> objects;
@@ -39,6 +40,7 @@ public class SpawnObjects : MonoBehaviour {
 				g.GetComponent<MarkerBehaviour> ().height = m.height;
 				g.GetComponent<MarkerBehaviour> ().direction = m.direction;
 				g.GetComponent<MarkerBehaviour> ().speed = m.speed;
+				g.GetComponent<MarkerBehaviour> ().is2D = m.is2D;
 				to_be_removed.Add (m);
 			}
 		}

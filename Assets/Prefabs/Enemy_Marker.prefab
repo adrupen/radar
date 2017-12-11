@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4010486664816460}
-  - component: {fileID: 114395495864142080}
+  - component: {fileID: 114690465982843568}
   m_Layer: 0
-  m_Name: S3. Enemy_Marker
+  m_Name: Enemy_Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261530323817822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.663, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4157681758404330}
@@ -357,7 +357,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666621695300432}
   m_Mesh: {fileID: 4300000, guid: 6f7041d5c60e8e847a67df084fb9cb64, type: 3}
---- !u!114 &114395495864142080
+--- !u!114 &114690465982843568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -365,9 +365,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261530323817822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7a3039e2df1834ea05530abfae96a3, type: 3}
+  m_Script: {fileID: 11500000, guid: afbb2752ef737a545b8aa16cfc29cb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
   speed: 0
   direction: {x: 0, y: 0}
+  is2D: 0
+  shadowScaleFactor: 4
+  heightTintFactor: 5

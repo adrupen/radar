@@ -53,9 +53,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4295441423289984}
-  - component: {fileID: 114902290915987594}
+  - component: {fileID: 114856483291647034}
   m_Layer: 0
-  m_Name: S3. Friendly_Marker
+  m_Name: Friendly_Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926515950521208}
   m_Mesh: {fileID: 4300000, guid: ab76dcbc943e60c49a5f54d5848c2f53, type: 3}
---- !u!114 &114902290915987594
+--- !u!114 &114856483291647034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -365,9 +365,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1355833821463196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7a3039e2df1834ea05530abfae96a3, type: 3}
+  m_Script: {fileID: 11500000, guid: afbb2752ef737a545b8aa16cfc29cb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
   speed: 0
   direction: {x: 0, y: 0}
+  is2D: 0
+  shadowScaleFactor: 4
+  heightTintFactor: 5
