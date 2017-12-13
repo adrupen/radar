@@ -35,7 +35,7 @@ public class MarkerBehaviour : MonoBehaviour {
 	}
 
 	void setup3Dmarker(){
-		line.transform.LookAt (new Vector3 (0, 0, 1));
+		line.transform.LookAt (new Vector3 (0, 0, 100));
 
 		donut.SetActive (false);
 	}
