@@ -290,11 +290,11 @@ public class EventChain : MonoBehaviour {
     }
 
 	int checkKeyPressed(){
-		if (Input.GetKeyDown (KeyCode.Keypad1))
+		if (Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
 			return 1;
-		if (Input.GetKeyDown (KeyCode.Keypad2))
+		if (Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
 			return 2;
-		if (Input.GetKeyDown (KeyCode.Keypad3))
+		if (Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
 			return 3;
         return -1;
 	}
