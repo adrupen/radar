@@ -64,6 +64,7 @@ public class EventChain : MonoBehaviour {
 	public GameState currentState = GameState.TutorialScreen;
     public float transitionTime = 2f;
 
+    private List<List<Marker>> original_scenarios;
     private List<List<Marker>> scenarios;
     private List<List<Marker>> tutorials;
 
@@ -124,6 +125,7 @@ public class EventChain : MonoBehaviour {
 
         tutorials = new List<List<Marker>>();
         scenarios = new List<List<Marker>>();
+        original_scenarios = new List<List<Marker>>();
 
         tutorials.Add (tutorial1Markers);
         tutorials.Add (tutorial2Markers);
@@ -131,20 +133,20 @@ public class EventChain : MonoBehaviour {
         tutorials.Add (tutorial4Markers);
         tutorials.Add (tutorial5Markers);
 
-        scenarios.Add (scenario1Markers);
-        scenarios.Add (scenario2Markers);
-        scenarios.Add (scenario3Markers);
-        scenarios.Add (scenario4Markers);
-        scenarios.Add (scenario5Markers);
-        scenarios.Add (scenario6Markers);
-        scenarios.Add (scenario7Markers);
-        scenarios.Add (scenario8Markers);
-        scenarios.Add (scenario9Markers);
-        scenarios.Add (scenario10Markers);
+        original_scenarios.Add (scenario1Markers);
+        original_scenarios.Add (scenario2Markers);
+        original_scenarios.Add (scenario3Markers);
+        original_scenarios.Add (scenario4Markers);
+        original_scenarios.Add (scenario5Markers);
+        original_scenarios.Add (scenario6Markers);
+        original_scenarios.Add (scenario7Markers);
+        original_scenarios.Add (scenario8Markers);
+        original_scenarios.Add (scenario9Markers);
+        original_scenarios.Add (scenario10Markers);
 
-        indexMap = randomizeScenarioOrder(scenarios);
+        scenarios = randomizeScenarioOrder(original_scenarios);
         
-        csvFileName = Application.dataPath + "/Data/participantData.csv";
+        csvFileName = Application.dataPath + "/participantData.csv";
         playerId = generateID();
         Debug.Log("Player Id is: " + playerId);
 	}
@@ -274,7 +276,7 @@ public class EventChain : MonoBehaviour {
         if (!tutorial)
         {
             currentRadar = radars[radarCounter];
-            indexMap = randomizeScenarioOrder(scenarios);
+            scenarios = randomizeScenarioOrder(original_scenarios);
         }
         else {
             currentRadar = tutorialRadarOrder[tutorialCounter];
@@ -303,7 +305,7 @@ public class EventChain : MonoBehaviour {
             string fileHeader = "Player id" + "," + "Radar" + "," + "Scenario" + "," + "Jet Picked" + "," + "Reaction Time" + "," + "is Correct" + System.Environment.NewLine;
             File.WriteAllText(csvFileName, fileHeader);
         }
-        string data = playerId + "," + currentRadar.ToString() + "," + currentScenarioData.scenario.ToString() + "," + currentScenarioData.jetPicked.ToString() + "," + currentScenarioData.reactionTime.ToString() + "," + currentScenarioData.isCorrect.ToString() + System.Environment.NewLine;
+        string data = playerId + "," + currentRadar.ToString() + "," + (currentScenarioData.scenario + 1).ToString() + "," + currentScenarioData.jetPicked.ToString() + "," + currentScenarioData.reactionTime.ToString() + "," + currentScenarioData.isCorrect.ToString() + System.Environment.NewLine;
         File.AppendAllText(csvFileName, data);
     }
 
@@ -346,24 +348,26 @@ public class EventChain : MonoBehaviour {
         ContinueUI.SetActive(true);
     }
 
-    int[] randomizeScenarioOrder(List<List<Marker>> scenarioList) {
+    List<List<Marker>> randomizeScenarioOrder(List<List<Marker>> scenarioList) {
         int n = scenarioList.Count;
-        int[] indexMapLocal = new int[n];
+        List<List<Marker>> shuffledList = new List<List<Marker>>(scenarioList);
+        if (indexMap == null)
+            indexMap = new int[n];
         for (int i = 0; i < n; i++)
-            indexMapLocal[i] = i;
+            indexMap[i] = i;
 
         while (n > 1)
         {
             n--;
             int k = Random.Range(0, n + 1);
-            List<Marker> value = scenarioList[k];
-            int index = indexMapLocal[k];
-            scenarioList[k] = scenarioList[n];
-            scenarioList[n] = value;
-            indexMapLocal[k] = indexMapLocal[n];
-            indexMapLocal[n] = index;
+            List<Marker> value = shuffledList[k];
+            int index = indexMap[k];
+            shuffledList[k] = shuffledList[n];
+            shuffledList[n] = value;
+            indexMap[k] = indexMap[n];
+            indexMap[n] = index;
         }
-        return indexMapLocal;
+        return shuffledList;
     }
 
     int[] randomizeRadarOrder(int[] radars) {
