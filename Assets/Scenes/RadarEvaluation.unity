@@ -1141,11 +1141,11 @@ MonoBehaviour:
     is2D: 0
     isMostDangerous: 0
   - prefab: {fileID: 1261530323817822, guid: 37f1a46c3cc21814a9edfe589508acda, type: 2}
-    direction: {x: 1, y: 1}
+    direction: {x: 1, y: 0}
     height: -1
     speed: 0.1
     spawn_time: 0
-    initial_position: {x: -1, y: -1}
+    initial_position: {x: -3, y: 0}
     is2D: 0
     isMostDangerous: 0
   - prefab: {fileID: 1261530323817822, guid: 37f1a46c3cc21814a9edfe589508acda, type: 2}
@@ -1153,7 +1153,7 @@ MonoBehaviour:
     height: 1.5
     speed: 0.1
     spawn_time: 0
-    initial_position: {x: 3, y: 0.4}
+    initial_position: {x: 3, y: 0}
     is2D: 0
     isMostDangerous: 1
   - prefab: {fileID: 1844374732693744, guid: 3d30beee7467a004999bfe7601386df3, type: 2}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     isMostDangerous: 0
   scenario6Markers:
   - prefab: {fileID: 1261530323817822, guid: 37f1a46c3cc21814a9edfe589508acda, type: 2}
-    direction: {x: -1, y: 0}
+    direction: {x: -1, y: -1}
     height: 2.5
     speed: 0.1
     spawn_time: 0
